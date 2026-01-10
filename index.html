@@ -1,80 +1,105 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NexusGuard AI | MSP MSSP CSP Partner</title>
+    <title>CloudMatrix | Intelligent Managed Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
+              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+              mono: ['SF Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
             },
             colors: {
-              slate: {
-                850: '#151e2e',
-                900: '#0f172a',
-                950: '#020617',
+              titanium: {
+                50: '#f5f5f7',
+                100: '#e5e5ea',
+                200: '#d1d1d6',
+                300: '#c7c7cc',
+                400: '#aeaeb2',
+                500: '#8e8e93',
+                600: '#636366',
+                700: '#48484a',
+                800: '#3a3a3c',
+                900: '#2c2c2e',
+                950: '#1c1c1e',
+                black: '#000000'
               },
-              brand: {
-                cyan: '#06b6d4',
-                purple: '#8b5cf6',
-                accent: '#22d3ee'
+              apple: {
+                blue: '#007aff',
+                indigo: '#5856d6',
+                purple: '#af52de',
+                cyan: '#32ade6',
+                green: '#34c759',
+                red: '#ff3b30',
+                orange: '#ff9500',
+                yellow: '#ffcc00'
               }
             },
-            animation: {
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'float': 'float 3s ease-in-out infinite',
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.3)',
+              'glow': '0 0 20px rgba(0, 122, 255, 0.3)',
             },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              }
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+              'titanium-sheen': 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)',
             }
           }
         }
       }
     </script>
     <style>
-      body {
-        background-color: #020617;
-        color: #e2e8f0;
+      body { 
+        background-color: #000000; 
+        color: #f5f5f7; 
+        -webkit-font-smoothing: antialiased;
       }
-      .glass {
-        background: rgba(15, 23, 42, 0.7);
+      .glass-panel {
+        background: rgba(28, 28, 30, 0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      .glass-panel:hover {
+        background: rgba(28, 28, 30, 0.75);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      .glass-button {
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       }
-      .glow-text {
-        text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+      .glass-button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.02);
       }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
+      /* Hide scrollbar for clean look */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
       }
-      ::-webkit-scrollbar-track {
-        background: #0f172a; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569; 
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
     </style>
   <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "recharts": "https://aistudiocdn.com/recharts@^2.12.7",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
   }
 }
 </script>

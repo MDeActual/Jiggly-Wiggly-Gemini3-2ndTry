@@ -1,5 +1,7 @@
 {
   "description": "Next-Gen MSP/MSSP/CSP Microsoft Cloud AI Partner Platform.",
-  "requestFramePermissions": [],
-  "name": ""
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "name": "App"
 }
